@@ -299,12 +299,12 @@ class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
             };
             return renderIconButton(iconButtonProps, isHidden, cellProperties);
           } else if(columnProperties.columnType === "switchButton") {
-            const rowData = this.props.filteredTableData[rowIndex];
+            // const rowData = this.props.filteredTableData[rowIndex];
             const switchButtonProps = {
               isSelected: isSelected,
               isCellVisible: cellProperties.isCellVisible ?? true,
               isDisabled: !!cellProperties.isDisabled,
-              label: cellProperties.menuButtonLabel ?? "",
+              label: "",
               isSwitchedOn: !!props.cell.value,
               columnActions: [
                 {
@@ -314,16 +314,23 @@ class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
                 },
               ],
               onChange: (isSwitchedOn: boolean) => {
-                const rowData = this.props.filteredTableData[rowIndex];
-                // rowData[columnProperties.id] = isSwitchedOn
-                this.props.updateWidgetMetaProperty('isSwitchedOn', isSwitchedOn, {
-                  triggerPropertyName: "onChange",
-                  dynamicString: columnProperties.onChange,
-                  event: {
-                    type: EventType.ON_SWITCH_CHANGE,
-                  },
-                  globalContext: { currentRow: rowData, key: props.cell.label },
-                });
+                const rowData = JSON.parse(JSON.stringify(this.props.filteredTableData[rowIndex]));
+                rowData[columnProperties.id] = columnProperties.computedValue[columnProperties.index]
+                this.props.updateWidgetMetaProperty(
+                  "selectedRow",
+                  rowData,
+                );
+                setTimeout(() => {
+                  this.props.updateWidgetMetaProperty('isSwitchedOn', isSwitchedOn, {
+                    triggerPropertyName: "onChange",
+                    dynamicString: columnProperties.onChange,
+                    event: {
+                      type: EventType.ON_SWITCH_CHANGE,
+                    },
+                    globalContext: { currentRow: rowData, key: props.cell.label },
+                  });
+                })
+
               },
               isLoading: false,
             }
@@ -1046,6 +1053,7 @@ class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
         );
       }
     } else {
+      // debugger
       const selectedRowIndex = isNumber(this.props.selectedRowIndex)
         ? this.props.selectedRowIndex
         : -1;
@@ -1060,7 +1068,7 @@ class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
         });
       } else {
         //reset selected row
-        this.props.updateWidgetMetaProperty("selectedRowIndex", -1);
+        // this.props.updateWidgetMetaProperty("selectedRowIndex", -1);
       }
     }
   };
