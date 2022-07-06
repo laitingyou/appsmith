@@ -61,7 +61,7 @@ export enum ColumnTypes {
   TEXT = "text",
   NUMBER = "number",
   URL = "url",
-  SWITCH_BUTTON = "switchButton"
+  SWITCH_BUTTON = "switchButton",
 }
 
 export enum OperatorTypes {

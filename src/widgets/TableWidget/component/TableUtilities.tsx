@@ -14,7 +14,8 @@ import {
   IconButtonWrapper,
 } from "./TableStyledWrappers";
 import { ColumnAction } from "components/propertyControls/ColumnActionSelectorControl";
-import { SwitchComponentProps } from "../../SwitchWidget/component"
+import { SwitchComponentProps } from "../../SwitchWidget/component";
+import { AlignWidgetTypes } from "widgets/constants";
 import {
   ColumnTypes,
   CellAlignmentTypes,
@@ -40,7 +41,7 @@ import { noop } from "utils/AppsmithUtils";
 import { ReactComponent as CheckBoxLineIcon } from "assets/icons/widget/table/checkbox-line.svg";
 import { ReactComponent as CheckBoxCheckIcon } from "assets/icons/widget/table/checkbox-check.svg";
 
-import { ButtonVariant } from "components/constants";
+import {ButtonVariant, LabelPosition} from "components/constants";
 
 //TODO(abstraction leak)
 import { StyledButton } from "widgets/IconButtonWidget/component";
@@ -307,7 +308,7 @@ export interface RenderMenuButtonProps {
   iconAlign?: Alignment;
 }
 
-export interface RenderSwitchButtonProps{
+export interface RenderSwitchButtonProps {
   isSelected: boolean;
   isDisabled: boolean;
   isCellVisible: boolean;
@@ -381,7 +382,6 @@ export const renderSwitchButton = (
   isHidden: boolean,
   cellProperties: CellLayoutProperties,
 ) => {
-  // @ts-ignore
   return (
     <CellWrapper
       cellProperties={cellProperties}
@@ -389,7 +389,7 @@ export const renderSwitchButton = (
       isHidden={isHidden}
       isPadding
     >
-      <SwitchComponent isLoading={false} alignWidget='LEFT' labelPosition={'Auto'} accentColor={""} widgetId={""} {...props} />
+      <SwitchComponent isLoading={false} alignWidget={AlignWidgetTypes.LEFT} labelPosition={LabelPosition.Left} accentColor={""} widgetId={""} {...props} />
     </CellWrapper>
   );
 };

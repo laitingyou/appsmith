@@ -55,6 +55,9 @@ module.exports = merge(common, {
   webpack: {
     plugins: plugins,
   },
+  eslint: {
+    enable: false,
+  },
   jest: {
     configure: {
       moduleNameMapper: {

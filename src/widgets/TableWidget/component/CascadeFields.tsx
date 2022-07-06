@@ -137,6 +137,9 @@ const typeOperatorsMap: Record<ColumnTypes, DropdownOption[]> = {
     { label: "empty", value: "empty", type: "" },
     { label: "not empty", value: "notEmpty", type: "" },
   ],
+  [ColumnTypes.SWITCH_BUTTON]: [
+    { label: "empty", value: "empty", type: "" },
+  ],
   [ColumnTypes.NUMBER]: [
     { label: "is equal to", value: "isEqualTo", type: "input" },
     { label: "not equal to", value: "notEqualTo", type: "input" },
@@ -169,6 +172,7 @@ const columnTypeNameMap: Record<ColumnTypes, string> = {
   [ColumnTypes.NUMBER]: "Num",
   [ColumnTypes.DATE]: "Date",
   [ColumnTypes.URL]: "Url",
+  [ColumnTypes.SWITCH_BUTTON]: "SwitchButton",
 };
 
 function RenderOption(props: { type: string; title: string; active: boolean }) {
