@@ -305,7 +305,7 @@ class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
               isCellVisible: cellProperties.isCellVisible ?? true,
               isDisabled: !!cellProperties.isDisabled,
               label: cellProperties.menuButtonLabel ?? "",
-              isSwitchedOn: !!rowData[columnProperties.id],
+              isSwitchedOn: !!props.cell.value,
               columnActions: [
                 {
                   id: columnProperties.id,
@@ -316,13 +316,13 @@ class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
               onChange: (isSwitchedOn: boolean) => {
                 const rowData = this.props.filteredTableData[rowIndex];
                 // rowData[columnProperties.id] = isSwitchedOn
-                this.props.updateWidgetMetaProperty('', isSwitchedOn, {
+                this.props.updateWidgetMetaProperty('isSwitchedOn', isSwitchedOn, {
                   triggerPropertyName: "onChange",
                   dynamicString: columnProperties.onChange,
                   event: {
                     type: EventType.ON_SWITCH_CHANGE,
                   },
-                  globalContext: { currentRow: rowData, key: columnProperties.id },
+                  globalContext: { currentRow: rowData, key: props.cell.label },
                 });
               },
               isLoading: false,

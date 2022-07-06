@@ -176,6 +176,7 @@ export default [
                       ColumnTypes.TEXT,
                       ColumnTypes.VIDEO,
                       ColumnTypes.URL,
+                      ColumnTypes.SWITCH_BUTTON,
                     ]);
                   },
                   dependencies: [
