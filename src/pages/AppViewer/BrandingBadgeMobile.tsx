@@ -10,8 +10,8 @@ function BrandingBadge() {
       rel="noreferrer"
       target="_blank"
     >
-      <h4 className="text-xs text-gray-500">Built on</h4>
-      <AppsmithLogo className="w-auto h-3" />
+      {/*<h4 className="text-xs text-gray-500">Built on</h4>*/}
+      {/*<AppsmithLogo className="w-auto h-3" />*/}
     </a>
   );
 }

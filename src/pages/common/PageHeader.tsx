@@ -202,13 +202,14 @@ export function PageHeader(props: PageHeaderProps) {
           {user.username !== ANONYMOUS_USERNAME && <Bell />}
           <StyledDropDownContainer>
             {user.username === ANONYMOUS_USERNAME ? (
-              <Button
-                filled
-                intent={"primary"}
-                onClick={() => history.push(loginUrl)}
-                size="small"
-                text="Sign In"
-              />
+              // <Button
+              //   filled
+              //   intent={"primary"}
+              //   onClick={() => history.push(loginUrl)}
+              //   size="small"
+              //   text="Sign In"
+              // />
+              null
             ) : (
               <ProfileDropdown
                 name={user.name}

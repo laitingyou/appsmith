@@ -123,18 +123,19 @@ export function PageMenu(props: AppViewerHeaderProps) {
               }}
               isOpen={showAppInviteUsersDialog}
               title={application.name}
-              trigger={
-                <Button
-                  borderRadius={
-                    selectedTheme.properties.borderRadius.appBorderRadius
-                  }
-                  boxShadow="none"
-                  buttonColor={selectedTheme.properties.colors.primaryColor}
-                  buttonVariant="SECONDARY"
-                  className="w-full h-8"
-                  text="Share"
-                />
-              }
+              trigger={null}
+              // trigger={
+              //   <Button
+              //     borderRadius={
+              //       selectedTheme.properties.borderRadius.appBorderRadius
+              //     }
+              //     boxShadow="none"
+              //     buttonColor={selectedTheme.properties.colors.primaryColor}
+              //     buttonVariant="SECONDARY"
+              //     className="w-full h-8"
+              //     text="Share"
+              //   />
+              // }
               workspaceId={workspaceID}
             />
           )}

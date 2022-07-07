@@ -1,4 +1,0 @@
-{
-  "upgradeSamlButton": ".t--settings-sub-category-upgrade-saml",
-  "upgradeOidcButton": ".t--settings-sub-category-upgrade-oidc"
-}

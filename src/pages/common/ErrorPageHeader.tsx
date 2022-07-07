@@ -71,15 +71,16 @@ export function ErrorPageHeader(props: ErrorPageHeaderProps) {
       {user && (
         <StyledDropDownContainer>
           {user.username === ANONYMOUS_USERNAME ? (
-            <Button
-              filled
-              intent={"primary"}
-              onClick={() => {
-                flushErrorsAndRedirect(loginUrl);
-              }}
-              size="small"
-              text="Sign In"
-            />
+            // <Button
+            //   filled
+            //   intent={"primary"}
+            //   onClick={() => {
+            //     flushErrorsAndRedirect(loginUrl);
+            //   }}
+            //   size="small"
+            //   text="Sign In"
+            // />
+            null
           ) : (
             <ProfileDropdown
               name={user.name}

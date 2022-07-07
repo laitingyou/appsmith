@@ -140,16 +140,17 @@ function PrimaryCTA(props: Props) {
       currentUser?.username === ANONYMOUS_USERNAME
     ) {
       return (
-        <Button
-          borderRadius={selectedTheme.properties.borderRadius.appBorderRadius}
-          buttonColor={selectedTheme.properties.colors.primaryColor}
-          buttonVariant="PRIMARY"
-          className="t--sign-in"
-          onClick={() => {
-            window.location.href = LOGIN_URL;
-          }}
-          text={createMessage(SIGN_IN)}
-        />
+        null
+        // <Button
+        //   borderRadius={selectedTheme.properties.borderRadius.appBorderRadius}
+        //   buttonColor={selectedTheme.properties.colors.primaryColor}
+        //   buttonVariant="PRIMARY"
+        //   className="t--sign-in"
+        //   onClick={() => {
+        //     window.location.href = LOGIN_URL;
+        //   }}
+        //   text={createMessage(SIGN_IN)}
+        // />
       );
     }
   }, [

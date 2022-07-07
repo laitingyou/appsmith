@@ -131,18 +131,19 @@ export function AppViewerHeader(props: AppViewerHeaderProps) {
                     isOpen={showAppInviteUsersDialog}
                     title={currentApplicationDetails.name}
                     trigger={
-                      <Button
-                        borderRadius={
-                          selectedTheme.properties.borderRadius.appBorderRadius
-                        }
-                        boxShadow="none"
-                        buttonColor={
-                          selectedTheme.properties.colors.primaryColor
-                        }
-                        buttonVariant="SECONDARY"
-                        className="h-8"
-                        text="Share"
-                      />
+                      null
+                      // <Button
+                      //   borderRadius={
+                      //     selectedTheme.properties.borderRadius.appBorderRadius
+                      //   }
+                      //   boxShadow="none"
+                      //   buttonColor={
+                      //     selectedTheme.properties.colors.primaryColor
+                      //   }
+                      //   buttonVariant="SECONDARY"
+                      //   className="h-8"
+                      //   text="Share"
+                      // />
                     }
                     workspaceId={currentWorkspaceId}
                   />
